@@ -439,6 +439,7 @@ class FloatingPanelCore: NSObject, UIGestureRecognizerDelegate {
 
         guard
             state == layoutAdapter.topMostState,   // When not top most(i.e. .full), don't scroll.
+            !(viewcontroller?.delegate?.floatingPanelShouldAllowPanOutsideOfScrollView ?? false),
             interactionInProgress == false,        // When interaction already in progress, don't scroll.
             surfaceView.frame.minY == layoutAdapter.topY
         else {

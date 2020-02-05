@@ -6,6 +6,8 @@
 import UIKit
 
 public protocol FloatingPanelControllerDelegate: class {
+    var floatingPanelShouldAllowPanOutsideOfScrollView: Bool { get }
+    
     // if it returns nil, FloatingPanelController uses the default layout
     func floatingPanel(_ vc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout?
 
